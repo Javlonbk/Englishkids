@@ -30,5 +30,5 @@ function EnterMainPage() {
     
     localStorage.setItem('userInfo', JSON.stringify(userInfo));
     
-    userInfo.name !== '' && userInfo.password !== '' ? toHome.href = './pages/main.html': alert('parol yoki nom kiritilmagan') 
+    userInfo.name !== '' && userInfo.password !== '' ? toHome.href = './pages/level.html': alert('parol yoki nom kiritilmagan') 
 }
