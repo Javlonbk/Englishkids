@@ -1,5 +1,7 @@
+// English words with translations
+
 const easyLevelEN = [
-  { word: "tree", typeEN: "noun", typeUZ: "ot", index: 1 },
+  { word: "tree", type: "noun", typeUZ: "ot", index: 1 },
   { word: "bee", type: "noun", typeUZ: "ot", index: 2 },
   { word: "doll", type: "noun", typeUZ: "ot", index: 3 },
   { word: "toy", type: "noun", typeUZ: "ot", index: 4 },
@@ -21,7 +23,7 @@ const easyLevelEN = [
   { word: "monkey", type: "noun", typeUZ: "ot", index: 20 },
 ];
 
-const easyLevelUz = [
+const easyLevelUZ = [
   { word: "daraxt", type: "noun", typeUZ: "ot", index: 1 },
   { word: "ari", type: "noun", typeUZ: "ot", index: 2 },
   { word: "qo'g'richoq", type: "noun", typeUZ: "ot", index: 3 },
@@ -136,8 +138,26 @@ const hardLevelUZ = [
   { word: "aylantirmoq", type: "verb", typeUZ: "fe'l", index: 20 },
 ];
 
+// Getting query param name
+const getQuery = () => {
+  return window.location.search.replace("?", "").split("=").at(1);
+};
+
+// Setting score
+document.querySelector(".score").textContent =
+  localStorage.getItem("score") || 0;
+
+// Setting difficulty
+const difficulty = getQuery();
+document.querySelector(".difficulty").textContent = difficulty
+  .at(0)
+  .toUpperCase()
+  .concat(difficulty.slice(1));
+
+// Getting random shuffle words
 const getRandomWords = (arr) => {
   const shuffled = arr
+    .slice(0, 10)
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
@@ -145,8 +165,93 @@ const getRandomWords = (arr) => {
   return shuffled;
 };
 
-// const allWords = [...easyLevelEN, ...easyLevelUz];
-// const result = getRandomWords(allWords);
-// console.log(result);
+// Function conroller
+const handleDifficulty = () => {
+  switch (getQuery()) {
+    case "easy":
+      return [getRandomWords(easyLevelEN), getRandomWords(easyLevelUZ)];
+    case "medium":
+      return [getRandomWords(mediumLevelEN), getRandomWords(mediumLevelUZ)];
+    case "hard":
+      return [getRandomWords(hardLevelEN), getRandomWords(hardLevelUZ)];
+    default:
+      break;
+  }
+};
 
-console.log();
+const containerEn = document.querySelector(".container-en");
+const containerUz = document.querySelector(".container-uz");
+const result = handleDifficulty();
+
+// const html = `<div class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center word"><h2 class="text-[18px] font-medium uppercase">Difficult</h2><span>adjective</span></div>`;
+
+result[0].forEach((elm) => {
+  containerEn.innerHTML += `<div class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center wordsEn" data-index=${elm.index}><h2 class="text-[18px] font-medium uppercase">${elm.word}</h2><span>${elm.type}</span></div>`;
+});
+
+result[1].forEach((elm) => {
+  containerUz.innerHTML += `<div class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center wordsUz " data-index=${elm.index}><h2 class="text-[18px] font-medium uppercase">${elm.word}</h2><span>${elm.typeUZ}</span></div>`;
+});
+
+const wordsEn = document.querySelectorAll(".wordsEn");
+const wordsUz = document.querySelectorAll(".wordsUz");
+
+localStorage.removeItem("selected1");
+localStorage.removeItem("selected2");
+
+wordsEn.forEach((elm) =>
+  elm.addEventListener("click", function (event) {
+    this.classList.toggle("active");
+    // this.style.background = "#D7f5ea";
+    // this.style.outline = "2px solid #adebd4";
+    localStorage.setItem("selected1", this.getAttribute("data-index"));
+    let selected2 = this.getAttribute("data-index");
+    console.log(this.getAttribute("data-index"));
+    if (
+      localStorage.getItem("selected1") &&
+      localStorage.getItem("selected2")
+    ) {
+      if (
+        localStorage.getItem("selected1") === localStorage.getItem("selected2")
+      ) {
+        console.log("correct");
+      }
+    }
+  })
+);
+
+wordsUz.forEach((elm) =>
+  elm.addEventListener("click", function (event) {
+    localStorage.setItem("selected2", this.getAttribute("data-index"));
+    // localStorage.setItem('') this.getAttribute("data-index");
+    console.log(localStorage.getItem("selected2"), "number");
+
+    this.classList.remove("active");
+    this.classList.toggle("active");
+    // this.style.background = "#D7f5ea";
+    // this.style.outline = "2px solid #adebd4";
+    // console.log(this.getAttribute("data-index"));
+    if (
+      localStorage.getItem("selected1") &&
+      localStorage.getItem("selected2")
+    ) {
+      if (
+        localStorage.getItem("selected1") === localStorage.getItem("selected2")
+      ) {
+        console.log("correct");
+      }
+    }
+  })
+);
+
+// const selected1 = localStorage.getItem("selected1");
+// const selected2 = localStorage.getItem("selected2");
+
+// if (selected1 && selected2) {
+//   if (selected1 === selected2) {
+//     console.log("correct");
+//   }
+// }
+
+console.log(localStorage.getItem("selected1"), "1");
+console.log(localStorage.getItem("selected2"), "2");
