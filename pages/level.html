@@ -11,10 +11,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../wowjs/css/libs/animate.css" />
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
     <script>
       tailwind.config = {
         theme: {
@@ -26,7 +22,8 @@
   <body class="font-['manrope'] text-[#010E38]">
     <header class="bg-[#F4F4F4] w-full">
       <div
-        class="mx-auto w-[867px] flex flex-row justify-between text-lg p-6 items-center">
+        class="mx-auto w-[867px] flex flex-row justify-between text-lg p-6 items-center"
+      >
         <span>🔥 Rekord natija: 15 point</span>
         <div class="flex">
           <img src="../assets/png/user-octagon.svg" alt="Profil ikonkasi" />
@@ -36,19 +33,16 @@
     </header>
 
     <main>
-      <div class="mx-auto w-[867px] mt-[30px] text-center">
+      <div class="mx-auto w-[867px] mt-[30px] text-center wow fadeInDown" data-wow-duration="0.5s">
         <p class="text-[18px]">Assalomu aleykum, Bahodir 👋</p>
         <h1 class="font-bold text-[28px]">
           Ozingiz uchun qulay darajani tanlang!
         </h1>
       </div>
 
-      <div class="mx-auto w-[867px] flex justify-between mt-[30px]">
+      <div class="mx-auto w-[867px] flex justify-between mt-[30px] wow fadeInUp" data-wow-duration="0.5s">
         <div
-          class="bg-[#53C3F8] rounded-[30px] p-[15px] w-[275px] wow fadeInUp"
-          data-wow-duration="1s"
-          data-wow-delay="0.1s"
-        >
+          class="bg-[#53C3F8] rounded-[30px] p-[15px] w-[275px]">
           <img
             src="../assets/png/Easy.svg"
             alt="rasm"
@@ -68,10 +62,7 @@
         </div>
 
         <div
-          class="bg-[#62E302] rounded-[30px] p-[15px] w-[275px] wow fadeInUp"
-          data-wow-duration="1s"
-          data-wow-delay="0.2s"
-        >
+          class="bg-[#62E302] rounded-[30px] p-[15px] w-[275px]">
           <img
             src="../assets/png/Medium.svg"
             alt="rasm"
@@ -91,10 +82,7 @@
         </div>
 
         <div
-          class="bg-[#FFDB1A] rounded-[30px] p-[15px] w-[275px] wow fadeInUp"
-          data-wow-duration="1s"
-          data-wow-delay="0.3s"
-        >
+          class="bg-[#FFDB1A] rounded-[30px] p-[15px] w-[275px]">
           <img
             src="../assets/png/Hard.svg"
             alt="rasm"
@@ -112,7 +100,18 @@
             <img src="../assets/png/arrow-right.svg" alt="" />
           </button>
         </div>
+      </div>
+    </main>
+    <script src="../wowjs/dist/wow.min.js"></script>
+    <script src="./../JS/navigate.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </body>
+</html>
+
     </div>
   </main>
 </body>
 </html>
+
