@@ -149,4 +149,4 @@ const getRandomWords = (arr) => {
 // const result = getRandomWords(allWords);
 // console.log(result);
 
-console.log(window.location);
+console.log();
