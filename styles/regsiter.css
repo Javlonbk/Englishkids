@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.register{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+.register_foto{
+    width: 60%;
+    height: 100%;
+}
+.register_form{
+    width: 40%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+}
+.register_foto img{
+    width: 100%;
+    height: 100%;
+}
+.register_form input{
+    margin-top: 30px;
+    padding: 10px;
+    
+}
+.register_form a button{
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: green;
+    color: #fff;
+    border: none;
+}
+.register_form button:hover{
+    cursor: pointer;
+}
