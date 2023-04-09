@@ -138,6 +138,8 @@ const hardLevelUZ = [
   { word: "aylantirmoq", type: "verb", typeUZ: "fe'l", index: 20 },
 ];
 
+// Functions--------------------------------------------------------------------------------------------
+
 // Getting query param name
 const getQuery = () => {
   return window.location.search.replace("?", "").split("=").at(1);
@@ -202,6 +204,7 @@ localStorage.removeItem("selected2");
 wordsEn.forEach((elm) =>
   elm.addEventListener("click", function (event) {
     this.classList.toggle("active");
+    
     // this.style.background = "#D7f5ea";
     // this.style.outline = "2px solid #adebd4";
     localStorage.setItem("selected1", this.getAttribute("data-index"));
