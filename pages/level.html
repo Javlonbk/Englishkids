@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        'main': 'manrope'
+      }
+    }
+  </script>
+</head>
+<body class="font-['manrope']">
+  <header class="bg-[#F4F4F4] w-full">
+    <div class="mx-auto w-[867px] flex flex-row justify-between text-lg p-6">
+        <span>🔥 Rekord natija: 15 point</span>
+        <div class="flex">
+            <img src="/images/user-octagon.svg" alt="Profil ikonkasi">
+            <span class="mx-2">Bahodir Yokubov</span>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="mx-auto w-[867px] mt-[30px] text-center">
+        <p class="text-[18px]">Assalomu aleykum, Bahodir 👋</p>
+        <h1 class="font-bold text-[28px]">Ozingiz uchun qulay darajani tanlang!</h1>
+    </div>
+
+    <div class="mx-auto w-[867px] flex justify-between mt-[30px]">
+        <div class="bg-[#53C3F8] rounded-[30px] p-[15px] w-[275px]">
+            <img src="/images/Easy.svg" alt="rasm" class="w-[70px] h-[70px]">
+
+            <h1 class="text-3xl	font-bold mt-[15px]">Easy</h1>
+            <p class="text-lg">Oson darajadagi so’zlar</p>
+
+            <button class="font-medium mt-[30px] bg-white rounded-[15px] p-[15px] flex justify-between w-full items-center">
+                <span class="text-lg">Boshlash</span>
+                <img src="/images/arrow-right-2.svg" alt="">
+            </button>
+        </div>
+
+        <div class="bg-[#62E302] rounded-[30px] p-[15px] w-[275px]">
+            <img src="/images/Medium.svg" alt="rasm" class="w-[70px] h-[70px]">
+
+            <h1 class="text-3xl	font-bold mt-[15px]">Medium</h1>
+            <p class="text-lg">O’rta darajadagi so’zlar</p>
+
+            <button class="font-medium mt-[30px] bg-white rounded-[15px] p-[15px] flex justify-between w-full items-center">
+                <span class="text-lg">Boshlash</span>
+                <img src="/images/arrow-right-1.svg" alt="">
+            </button>
+        </div>
+
+        <div class="bg-[#FFDB1A] rounded-[30px] p-[15px] w-[275px]">
+            <img src="/images/Hard.svg" alt="rasm" class="w-[70px] h-[70px]">
+
+            <h1 class="text-3xl	font-bold mt-[15px]">Hard</h1>
+            <p class="text-lg">Murakkab so’zlar</p>
+
+            <button class="font-medium mt-[30px] bg-white rounded-[15px] p-[15px] flex justify-between w-full items-center">
+                <span class="text-lg">Boshlash</span>
+                <img src="/images/arrow-right.svg" alt="">
+            </button>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
