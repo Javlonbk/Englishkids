@@ -1,8 +1,9 @@
 const buttons = document.querySelectorAll(".btn");
 
-const redirectTo = (url) => {
+const redirectTo = (difficulty) => {
   // console.log(window.loc ation.href.replace("level", url));
-  window.location.assign(window.location.href.replace("level", "test"));
+  const endpoint = window.location.href.replace("level", "test");
+  window.location.assign(`${endpoint}?level=${difficulty}`);
 };
 
 buttons.forEach((elm) => {
@@ -10,11 +11,11 @@ buttons.forEach((elm) => {
     // console.log(window.location.origin);
     switch (this.getAttribute("data-level")) {
       case "easy":
-        return redirectTo("easyTest");
+        return redirectTo("easy");
       case "medium":
-        return redirectTo("mediumTest");
+        return redirectTo("medium");
       case "hard":
-        return redirectTo("difficultTest");
+        return redirectTo("difficult");
       default:
         break;
     }
