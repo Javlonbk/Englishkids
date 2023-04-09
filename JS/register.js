@@ -19,6 +19,5 @@ function EnterMainPage() {
 }
 
 function Enter(){
-    console.log('ishladi')
     window.location = 'pages/level.html'
 }
