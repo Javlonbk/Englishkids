@@ -1,34 +1,23 @@
 // register
 let register = document.querySelector('.register_form');
 let name = document.querySelector('.name');
-let password = document.querySelector('.password');
-let enter = document.querySelector('.enter');
-let toHome = document.querySelector('.toHome');
+let notification = document.querySelector('.notification');
 
-const userInfo = {
-    name: name.value,
-    password: password.value 
-}
-const memory = localStorage.getItem('userInfo');
+function EnterMainPage() {
+    event.preventDefault();
 
+    if(name.value){
+        const userInfo = {
+            name: name.value,
+        }
 
-
-function getUserInfo() {
-    if(memory){
-        userInfo.name = JSON.parse(memory).name;
-        userInfo.password = JSON.parse(memory).password;
-        name.value = userInfo.name;
-        password.value = userInfo.password;
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
+        Enter();
+    } else{
+        notification.style.display = 'block';
     }
 }
 
-
-function EnterMainPage() {
-    
-    userInfo.name = name.value;
-    userInfo.password = password.value; 
-    
-    localStorage.setItem('userInfo', JSON.stringify(userInfo));
-    
-    userInfo.name !== '' && userInfo.password !== '' ? toHome.href = './pages/level.html': alert('parol yoki nom kiritilmagan') 
+function Enter(){
+    window.location = 'pages/level.html'
 }

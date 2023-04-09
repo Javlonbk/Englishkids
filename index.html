@@ -17,27 +17,45 @@
         </script>
 </head>
 
-<body class="font-['manrope'] text-[#010E38]" onload="getUserInfo()">
+<body class="font-['manrope'] text-[#010E38]">
     <div class="flex min-h-screen gap-[30px] items-center">
-        <div class="flex-1 w-full min-h-screen bg-cover bg-center" style="background-image: url(assets/png/Bg.png);"></div>
+        <div class="flex-1 w-full min-h-screen bg-cover bg-center wow fadeInLeft" data-wow-duration="0.5s" style="background-image: url(assets/png/Bg.png);"></div>
 
-        <div class="flex-1 flex flex-col mr-[30px]">
+        <form  class="flex-1 flex flex-col mr-[30px] wow fadeInRight" data-wow-duration="0.5s">
             <h3 class="font-bold text-[28px]">Tizimga kirish</h3>
-            <p class="text-[18px]">Assalomu aleykum, xush kelibsiz 👋</p>
+            <p class="text-[18px]">Assalomu aleykum, xush kelibsiz, ismingizni kiriting va o'yinni boshlaymiz 👋</p>
             <input type="text" placeholder="name" class="mt-[30px] mb-[15px] name border border-[#EAEAEA] rounded-[5px] bg-[#f4f4f4] p-[15px]">
-            <input type="password" placeholder="password" class="password border-1 border-[#EAEAEA] rounded-[5px] bg-[#f4f4f4] p-[15px]">
             
-            <div class="flex justify-between">
-                <a href="" class="toHome mt-[30px] bg-[#0F704E] py-[15px] px-[30px] self-start rounded-[5px] text-[18px] font-medium text-white">
-                    <button class="enter" onclick="EnterMainPage()">Tizimga kirish</button>
-                </a>
-                <a href="" class="toHome mt-[30px] bg-[#D7F5EA] py-[15px] px-[30px] self-start rounded-[5px] text-[18px] font-medium text-[#0A4933]">
-                    <button class="enter" onclick="EnterMainPage()">Yangi akkaunt yaratish</button>
-                </a>
-            </div>
-        </div>
+            <button class="enter mt-[30px] bg-[#0F704E] py-[15px] px-[30px] self-start rounded-[5px] text-[18px] font-medium text-white" onclick="EnterMainPage()">Tizimga kirish</button>
+
+        </form>
+    </div>
+
+    <div class="notification wow fadeInRight" data-wow-duration="0.3s">
+      <h1 class="text-[18px] font-semibold">Ism kiritilishi majburiy</h1>
+      <p class="text-[14px]">Ismingizni kiritish orqali o'yinda ishtirok eta olasiz</p>
     </div>
 
     <script src="./JS/register.js"></script>
+
+    <script src="../wowjs/dist/wow.min.js"></script>
+    <script src="./../JS/navigate.js"></script>
+    <script>
+      new WOW().init();
+    </script>
 </body>
 </html>
+
+<style>
+  .notification{
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: #FFEBEB;
+    color: #B90000;
+    padding: 20px 25px;
+    border-radius: 10px;
+  }
+
+</style>
