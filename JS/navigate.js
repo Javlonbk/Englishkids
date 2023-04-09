@@ -15,7 +15,7 @@ buttons.forEach((elm) => {
       case "medium":
         return redirectTo("medium");
       case "hard":
-        return redirectTo("difficult");
+        return redirectTo("hard");
       default:
         break;
     }

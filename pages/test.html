@@ -17,6 +17,12 @@
         },
       };
     </script>
+    <style>
+      .wrapper .active {
+        background-color: #d7f5ea;
+        outline: 2px solid #adebd4;
+      }
+    </style>
   </head>
   <body onload="startGame()" class="font-['manrope'] text-[#010E38]">
     <header class="bg-[#F4F4F4] w-full">
@@ -27,7 +33,9 @@
           <div class="bg-[#ffffff] p-[15px] rounded-full">
             <img src="../assets/png/arrow-left.svg" alt="" />
           </div>
-          <span class="ml-[5px]">🔥 Rekord natija: 15 point</span>
+          <span class="ml-[5px]"
+            >🔥 Rekord natija: <span class="score">15</span> point</span
+          >
         </div>
         <div class="flex">
           <img src="../assets/png/user-octagon.svg" alt="Profil ikonkasi" />
@@ -52,7 +60,7 @@
           >
             <img src="../assets/png/Easy.svg" alt="rasm" class="w-[70px] h-[70px]" />
 
-            <h1 class="text-3xl font-bold mt-[15px]">Easy</h1>
+            <h1 class="text-3xl font-bold mt-[15px] difficulty"></h1>
             <p class="text-lg">Tanlangan daraja</p>
           </div>
 
@@ -64,80 +72,10 @@
               </p>
             </div>
 
-            <div class="mt-[30px] flex gap-[15px]">
-              <div class="flex-1">
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
+            <div class="mt-[30px] flex gap-[15px] wrapper">
+              <div class="flex-1 container-en"></div>
 
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
-
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
-
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
-
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
-              </div>
-
-              <div class="flex-1">
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
-
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
-
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
-
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
-
-                <div
-                  class="mb-[15px] p-[15px] bg-[white] border-1 border-[#EAEAEA] rounded-[15px] flex justify-between items-center"
-                >
-                  <h2 class="text-[18px] font-medium uppercase">Difficult</h2>
-                  <span>adjective</span>
-                </div>
-              </div>
+              <div class="flex-1 container-uz"></div>
             </div>
           </div>
         </div>
