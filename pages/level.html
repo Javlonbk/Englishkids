@@ -27,14 +27,14 @@
         <span>🔥 Rekord natija: 15 point</span>
         <div class="flex">
           <img src="../assets/png/user-octagon.svg" alt="Profil ikonkasi" />
-          <span class="mx-2">Bahodir Yokubov</span>
+          <span class="mx-2 fullName"></span>
         </div>
       </div>
     </header>
 
     <main>
       <div class="mx-auto w-[867px] mt-[30px] text-center wow fadeInDown" data-wow-duration="0.5s">
-        <p class="text-[18px]">Assalomu aleykum, Bahodir 👋</p>
+        <p class="text-[18px] helloName"></p>
         <h1 class="font-bold text-[28px]">
           Ozingiz uchun qulay darajani tanlang!
         </h1>
@@ -106,6 +106,14 @@
     <script src="./../JS/navigate.js"></script>
     <script>
       new WOW().init();
+
+      let fullName = document.querySelector('.fullName');
+      let helloName = document.querySelector('.helloName');
+
+     let  userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    fullName.innerHTML = userInfo.name
+    helloName.innerHTML = `Assalomu aleykum, ${userInfo.name} 👋`
+
     </script>
   </body>
 </html>

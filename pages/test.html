@@ -18,20 +18,20 @@
       };
     </script>
   </head>
-  <body class="font-['manrope'] text-[#010E38]">
+  <body onload="startGame()" class="font-['manrope'] text-[#010E38]">
     <header class="bg-[#F4F4F4] w-full">
       <div
         class="mx-auto w-[867px] flex flex-row justify-between text-lg p-6 items-center"
       >
         <div class="flex items-center">
           <div class="bg-[#ffffff] p-[15px] rounded-full">
-            <img src="/images/arrow-left.svg" alt="" />
+            <img src="../assets/png/arrow-left.svg" alt="" />
           </div>
           <span class="ml-[5px]">🔥 Rekord natija: 15 point</span>
         </div>
         <div class="flex">
-          <img src="/images/user-octagon.svg" alt="Profil ikonkasi" />
-          <span class="mx-2">Bahodir Yokubov</span>
+          <img src="../assets/png/user-octagon.svg" alt="Profil ikonkasi" />
+          <span class="mx-2 fullName"></span>
         </div>
       </div>
     </header>
@@ -43,14 +43,14 @@
           <div class="w-full h-[5px] bg-[#eaeaea] rounded-[5px]">
             <div class="time h-[5px] bg-[#CC348D] rounded-[5px]"></div>
           </div>
-          <span>-00:45</span>
+          <span class="timerOfGame">0</span>
         </div>
 
         <div class="flex gap-[20px] mt-[30px] justify-between">
           <div
             class="flex-1 bg-[#53C3F8] rounded-[30px] p-[15px] w-[275px] self-start"
           >
-            <img src="/images/Easy.svg" alt="rasm" class="w-[70px] h-[70px]" />
+            <img src="../assets/png/Easy.svg" alt="rasm" class="w-[70px] h-[70px]" />
 
             <h1 class="text-3xl font-bold mt-[15px]">Easy</h1>
             <p class="text-lg">Tanlangan daraja</p>
@@ -146,8 +146,8 @@
 
       <div class="popup">
         <div>
-          <img src="/assets/png/arrow-left.svg" class="cursor-pointer absolute t-2 l-2" alt="" onclick="backToLevels()">
-          <img src="/assets/png/Congr.svg" alt="rasm" class="mx-auto mb-4">
+          <img src="../assets/png/arrow-left.svg" class="cursor-pointer absolute t-2 l-2" alt="" onclick="backToLevels()">
+          <img src="../assets/png/Congr.svg" alt="rasm" class="mx-auto mb-4">
           <h3 class="text-[22px] uppercase font-semibold">Vaqt tugadi</h3>
           <p class="text-[18px] mb-4">20 soniya ichida umumiy to'plagan ballingiz:</p>
           <h1 class="text-[45px] font-bold uppercase">7 ball</h1>
@@ -162,8 +162,12 @@
   <script src="./../JS/popup.js"></script>
   <script src="./../JS/progress.js"></script>
   <script src="../wowjs/dist/wow.min.js"></script>
+  <script src='../JS/timer.js'></script>
   <script>
     new WOW().init();
+    let fullName = document.querySelector('.fullName');
+     let  userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    fullName.innerHTML = userInfo.name
   </script>
 
 </html>
